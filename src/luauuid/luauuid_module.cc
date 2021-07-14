@@ -28,11 +28,11 @@ namespace lua_module_luauuid
     {
         sol::state_view lua(L);
         sol::table module = lua.create_table();
-        module.set_function("GPrint",&Cluauuid::GPrint);
+
         module.new_usertype<Cluauuid>(
             "luauuid",
-            sol::constructors<Cluauuid(sol::this_state)>(),
-            "OPrint", &Cluauuid::OPrint
+            sol::constructors<Cluauuid(int, int)>(),
+            "GetNextID", &Cluauuid::GetNextID
             );
 
         return module;

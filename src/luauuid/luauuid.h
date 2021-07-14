@@ -24,17 +24,16 @@
 
 #include "sol/sol.hpp"
 #include <string>
+#include "dmsnowflake.hpp"
 
 class Cluauuid
 {
 public:
-    Cluauuid(sol::this_state L);
+    Cluauuid(int region_id = 0, int worker_id = 0);
 
-    void OPrint(const std::string& strInfo);
-
-    static void GPrint(const std::string& strInfo);
+    uint64_t GetNextID();
 private:
-    sol::state_view m_oState;
+    CDMIDGenerator m_oIDGen;
 };
 
 #endif // __LUAUUID_H__

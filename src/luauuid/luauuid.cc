@@ -22,18 +22,14 @@
 #include "luauuid.h"
 #include<iostream>
 
-Cluauuid::Cluauuid(sol::this_state L)
-: m_oState(L)
+Cluauuid::Cluauuid(int region_id, int worker_id)
+: m_oIDGen(region_id, worker_id )
 {
 
 }
 
-void Cluauuid::OPrint(const std::string& strInfo)
+uint64_t Cluauuid::GetNextID()
 {
-    m_oState["print"].call(strInfo);
+    return m_oIDGen.GetNextID();
 }
 
-void Cluauuid::GPrint(const std::string& strInfo)
-{
-    std::cout << strInfo << std::endl;
-}
