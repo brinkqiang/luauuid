@@ -30,7 +30,7 @@ namespace lua_module_luauuid
         sol::table module = lua.create_table();
 
         module.new_usertype<Cluauuid>(
-            "luauuid",
+            "uuid",
             sol::constructors<Cluauuid(int, int)>(),
             "GetNextID", &Cluauuid::GetNextID
             );
