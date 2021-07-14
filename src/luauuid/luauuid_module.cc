@@ -31,7 +31,8 @@ namespace lua_module_luauuid
 
         module.new_usertype<Cluauuid>(
             "uuid",
-            sol::constructors<Cluauuid(int, int)>(),
+            sol::constructors<Cluauuid(), Cluauuid(int, int)>(),
+            sol::meta_function::garbage_collect, sol::destructor([](Cluauuid& temp) { temp.~Cluauuid(); }),
             "GetNextID", &Cluauuid::GetNextID
             );
 

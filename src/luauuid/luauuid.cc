@@ -22,8 +22,19 @@
 #include "luauuid.h"
 #include<iostream>
 
+Cluauuid::Cluauuid()
+: m_oIDGen(0, 0 )
+{
+
+}
+
 Cluauuid::Cluauuid(int region_id, int worker_id)
 : m_oIDGen(region_id, worker_id )
+{
+
+}
+
+Cluauuid::~Cluauuid()
 {
 
 }
