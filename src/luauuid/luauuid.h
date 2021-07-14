@@ -30,7 +30,7 @@ class Cluauuid
 {
 public:
     Cluauuid();
-    Cluauuid(int region_id = 0, int worker_id = 0);
+    Cluauuid(int region_id, int worker_id);
     ~Cluauuid();
     uint64_t GetNextID();
 private:
