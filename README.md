@@ -33,6 +33,5 @@ local uuid = luauuid.uuid.new()
 print(uuid:GetNextID())
 ```
 ## Contacts
-[![Join the chat](https://badges.gitter.im/brinkqiang/luauuid/Lobby.svg)](https://gitter.im/brinkqiang/luauuid)
 
 ## Thanks
